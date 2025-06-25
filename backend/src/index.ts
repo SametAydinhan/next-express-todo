@@ -1,14 +1,7 @@
-import express from "express";
-import cors from "cors";
+import app from "./app";
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = 8080;
 
-app.get("/", (req, res) => {
-  res.send("Backend is working.");
-});
-
-app.listen(8080, () => {
-  console.log("Server running on http://localhost:8080");
+app.listen(PORT, () => {
+  console.log(`Server running on https://localhost:${PORT}`);
 });
