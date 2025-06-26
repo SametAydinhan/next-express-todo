@@ -23,3 +23,8 @@ export const updateTodo = async (
 export const deleteTodo = async (id: string) => {
   await axios.delete(`${BASE_URL}/${id}`);
 };
+
+export const getTodoById = async (id: string) => {
+  const res = await axios.get(`${BASE_URL}/${id}`);
+  return res.data;
+};
