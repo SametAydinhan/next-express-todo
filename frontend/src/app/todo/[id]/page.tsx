@@ -1,4 +1,5 @@
 import GoBackButton from "@/app/components/GoBackButton";
+import TodoDetailActions from "@/app/components/TodoDetailActions";
 import { getTodoById } from "@/lib/api";
 import React from "react";
 
@@ -19,6 +20,7 @@ const TodoDetailPage = async ({ params }: Props) => {
           <strong>Completed:</strong> {todo.completed ? "Yes" : "No"}
         </p>
       </div>
+      <TodoDetailActions id={todo.id} currentTitle={todo.title} />
       <GoBackButton />
     </div>
   );
