@@ -39,3 +39,13 @@ export const deleteTodo = (req: Request, res: Response): void => {
   todos.splice(index, 1);
   res.status(204).send();
 };
+
+export const getTodoById = (req: Request, res: Response): void => {
+  const { id } = req.params;
+  const todo = todos.find((t) => t.id === id);
+  if (!todo) {
+     res.status(404).json({ message: "Todo not found" });
+     return;
+  }
+   res.json(todo);
+};
