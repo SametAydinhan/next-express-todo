@@ -1,8 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  /* Light: slate-50 */
+  --foreground: #1e293b;
+  /* Light: slate-800 */
+  --primary: #2563eb;
+  /* Light: blue-600 */
+  --secondary: #64748b;
+  /* Light: slate-400 */
+  --border: #e2e8f0;
+  /* Light: slate-200 */
+  --card: #ffffff;
+  /* Light: white */
+  --danger: #ef4444;
+  /* Light: red-500 */
+  --success: #22c55e;
+  /* Light: green-500 */
+  --input-bg: #f1f5f9;
+  /* Light: slate-100 */
+  --input-border: #cbd5e1;
+  /* Light: slate-300 */
+  --transition: background 0.3s, color 0.3s;
 }
 
 @theme inline {
@@ -14,8 +33,27 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a;
+    /* Dark: slate-900 */
+    --foreground: #f1f5f9;
+    /* Dark: slate-100 */
+    --primary: #60a5fa;
+    /* Dark: blue-400 */
+    --secondary: #94a3b8;
+    /* Dark: slate-400 */
+    --border: #334155;
+    /* Dark: slate-700 */
+    --card: #1e293b;
+    /* Dark: slate-800 */
+    --danger: #f87171;
+    /* Dark: red-400 */
+    --success: #4ade80;
+    /* Dark: green-400 */
+    --input-bg: #1e293b;
+    /* Dark: slate-800 */
+    --input-border: #334155;
+    /* Dark: slate-700 */
+    --transition: background 0.3s, color 0.3s;
   }
 }
 
@@ -23,4 +61,26 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: var(--transition);
+}
+
+input,
+textarea,
+select {
+  background: var(--input-bg);
+  color: var(--foreground);
+  border: 1px solid var(--input-border);
+  transition: var(--transition);
+}
+
+button {
+  transition: var(--transition);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
 }

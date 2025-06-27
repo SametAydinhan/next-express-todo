@@ -6,13 +6,14 @@ import {
   deleteTodo,
   getTodoById,
 } from "../controllers/todo.controller";
+import { asyncHandler } from "../utils/asyncHandler";
 
 const router = Router();
 
-router.get("/", getTodos);
-router.post("/", createTodo);
-router.put("/:id", updateTodo);
-router.delete("/:id", deleteTodo);
-router.get("/:id", getTodoById);
+router.get("/", asyncHandler(getTodos));
+router.post("/", asyncHandler(createTodo));
+router.put("/:id", asyncHandler(updateTodo));
+router.delete("/:id", asyncHandler(deleteTodo));
+router.get("/:id", asyncHandler(getTodoById));
 
 export default router;
